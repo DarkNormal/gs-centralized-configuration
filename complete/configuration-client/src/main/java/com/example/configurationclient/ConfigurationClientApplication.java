@@ -38,8 +38,32 @@ class MessageRestController {
 	@Value("${message:Hello default}")
 	private String message;
 
+	@Value("${datasource:datasource default value}")
+	private String datasource;
+
+	@Value("${propertySource:default value}")
+	private String propertySource;
+
+	@Value("${enabled}")
+	private boolean enabled;
+
 	@RequestMapping("/message")
 	String getMessage() {
 		return this.message;
+	}
+
+	@RequestMapping("/datasource")
+	String getDatasource() {
+		return this.datasource;
+	}
+
+	@RequestMapping("/propertySource")
+	String getPropertysource() {
+		return this.propertySource;
+	}
+
+	@RequestMapping("/enabled")
+	boolean getEnabled() {
+		return this.enabled;
 	}
 }
